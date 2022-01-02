@@ -1,4 +1,6 @@
+import spleeter
 from spleeter.separator import Separator
+from spleeter.audio import Codec
 # file = Audio(input_file)
 files = [
     "inputs/02 Gasoline.mp3",
@@ -14,5 +16,6 @@ separator = Separator(
 for file in files:
     separator.separate_to_file(
         audio_descriptor=file,
-        destination="outputs/"
+        destination="outputs/",
+        codec=Codec.MP3
     )
