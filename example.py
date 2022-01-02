@@ -1,13 +1,12 @@
 import spleeter
 from spleeter.separator import Separator
 from spleeter.audio import Codec
+from pathlib import Path
 # file = Audio(input_file)
-files = [
-    "inputs/02 Gasoline.mp3",
-    "inputs/03 Give Me The Meltdown.mp3",
-    "inputs/05 Mockingbird.mp3"
-]
-
+files = [str(i) for i in Path("inputs").iterdir()]
+# files = [
+#     str(Path("inputs/12 Heart Of The World.mp3"))
+# ]
 separator = Separator(
     params_descriptor="configs/2stems/base_config.json",
     multiprocess=False
